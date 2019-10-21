@@ -1,1 +1,1 @@
-const message = 'Hello';
+export 'src/nice_client.dart';
