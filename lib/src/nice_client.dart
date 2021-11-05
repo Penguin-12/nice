@@ -15,38 +15,38 @@ class NiceClient extends BaseClient {
   final Map<String, String> headers;
 
   @override
-  Future<Response> head(url, {Map<String, String> headers}) {
-    return super.head('$baseUrl$url', headers: headers);
+  Future<Response> head(String url, {Map<String, String> headers}) {
+    return super.head(Uri.parse('$baseUrl$url'), headers: headers);
   }
 
   @override
-  Future<Response> get(url, {Map<String, String> headers}) {
-    return super.get('$baseUrl$url', headers: headers);
+  Future<Response> get(String url, {Map<String, String> headers}) {
+    return super.get(Uri.parse('$baseUrl$url'), headers: headers);
   }
 
   @override
-  Future<Response> post(url,
+  Future<Response> post(String url,
       {Map<String, String> headers, body, Encoding encoding}) {
     return super
-        .post('$baseUrl$url', headers: headers, body: body, encoding: encoding);
+        .post(Uri.parse('$baseUrl$url'), headers: headers, body: body, encoding: encoding);
   }
 
   @override
-  Future<Response> put(url,
+  Future<Response> put(String url,
       {Map<String, String> headers, body, Encoding encoding}) {
     return super
-        .put('$baseUrl$url', headers: headers, body: body, encoding: encoding);
+        .put(Uri.parse('$baseUrl$url'), headers: headers, body: body, encoding: encoding);
   }
 
   @override
-  Future<Response> patch(url,
+  Future<Response> patch(String url,
       {Map<String, String> headers, body, Encoding encoding}) {
-    return super.patch('$baseUrl$url',
+    return super.patch(Uri.parse('$baseUrl$url'),
         headers: headers, body: body, encoding: encoding);
   }
 
-  Future<Response> delete(url, {Map<String, String> headers}) {
-    return super.delete('$baseUrl$url', headers: headers);
+  Future<Response> delete(String url, {Map<String, String> headers}) {
+    return super.delete(Uri.parse('$baseUrl$url'), headers: headers);
   }
 
   @override
